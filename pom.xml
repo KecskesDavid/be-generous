@@ -14,7 +14,7 @@
 	<name>be-generous</name>
 	<description>University project</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>14</java.version>
 	</properties>
 	<dependencies>
 		<!--	SPRING STARTER	-->
