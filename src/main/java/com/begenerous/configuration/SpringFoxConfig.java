@@ -24,6 +24,8 @@ public class SpringFoxConfig extends WebMvcConfigurationSupport {
                 .build().apiInfo(metaData());
     }
 
+
+
     private ApiInfo metaData() {
         return new ApiInfoBuilder()
                 .title("Be-Generous")
