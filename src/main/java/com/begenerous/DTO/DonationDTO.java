@@ -15,4 +15,5 @@ public class DonationDTO {
     private Long transactionDate;
     private Long creditCardId;
     private Long charityId;
+    private Long userId;
 }

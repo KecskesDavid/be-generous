@@ -52,6 +52,10 @@ public class Donation {
     @JoinColumn(name = "charity_id", nullable = false)
     private Charity charity;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     public Donation(Double amount, String message, long transactionDate) {
         this.amount = amount;
         this.message = message;

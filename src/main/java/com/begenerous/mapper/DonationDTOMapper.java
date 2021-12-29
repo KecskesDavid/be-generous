@@ -17,7 +17,8 @@ public class DonationDTOMapper implements Mapper<Donation, DonationDTO> {
                 donation.getMessage(),
                 donation.getTransactionDate(),
                 donation.getCreditCard().getCreditCardId(),
-                donation.getCharity().getCharityId()
+                donation.getCharity().getCharityId(),
+                donation.getUser().getUserId()
         );
     }
 

@@ -39,6 +39,7 @@ public class DonationServiceImpl implements DonationService {
 
         donation.setCreditCard(creditCard);
         donation.setCharity(charity);
+        donation.setUser(charity.getUser());
         return donationRepo.save(donation);
     }
 
