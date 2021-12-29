@@ -56,8 +56,10 @@ public class UserController {
     @PostMapping(path = "/user/update")
     public ResponseEntity<?> updateUser(@Valid @RequestBody RequestUserDTO requestUserDTO) {
         try {
+            User user = requestuserEntityMapper.convertOne(requestUserDTO);
+            user.setUserId(requestUserDTO.getUserId());
             userService.updateUser(
-                    requestuserEntityMapper.convertOne(requestUserDTO)
+                    user
             );
 
             ResponseBodyUtil responseBodyUtil = new ResponseBodyUtil();

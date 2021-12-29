@@ -62,8 +62,10 @@ public class CreditCardController {
     @PostMapping(path = "/update")
     public ResponseEntity<?> updateCreditCard(@Valid @RequestBody CreditCardDTO creditCardDTO) {
         try {
+            CreditCard creditCard = creditCardEntityMapper.convertOne(creditCardDTO);
+            creditCard.setCreditCardId(creditCardDTO.getCreditCardId());
             creditCardService.updateCreditCard(
-                    creditCardEntityMapper.convertOne(creditCardDTO)
+                creditCard
             );
 
             ResponseBodyUtil responseBodyUtil = new ResponseBodyUtil();

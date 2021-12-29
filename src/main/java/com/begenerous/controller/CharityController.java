@@ -52,8 +52,10 @@ public class CharityController {
     @PostMapping(path = "/update")
     public ResponseEntity<?> updateCharity(@Valid @RequestBody CharityDTO charityDTO) {
         try {
+            Charity charity = charityEntityMapper.convertOne(charityDTO);
+            charity.setCharityId(charityDTO.getCharityId());
             charityService.updateCharity(
-                    charityEntityMapper.convertOne(charityDTO),
+                    charity,
                     charityDTO.getUserId()
             );
 
