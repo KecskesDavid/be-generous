@@ -85,4 +85,14 @@ public class CharityController {
             return ExceptionHandlerUtils.invalidInputException("No charity with the id: " + charityId);
         }
     }
+
+    @DeleteMapping(path = "/{charityId}")
+    public ResponseEntity<?> deleteCharity(@PathVariable("charityId") Long charityId) {
+        try {
+            charityService.deleteCharity(charityId);
+            return new ResponseEntity(HttpStatus.OK);
+        } catch (Exception e) {
+            return ExceptionHandlerUtils.invalidInputException("No charity with the id: " + charityId);
+        }
+    }
 }

@@ -61,4 +61,10 @@ public class CharityServiceImpl implements CharityService {
 
         return null;
     }
+
+    @Override
+    public void deleteCharity(Long charityId) throws RowNotFoundException {
+        charityRepo.findById(charityId).orElseThrow(() -> new RowNotFoundException("No charity exists with the id: " + charityId));
+        charityRepo.deleteById(charityId);
+    }
 }

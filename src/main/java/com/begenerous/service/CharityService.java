@@ -16,4 +16,6 @@ public interface CharityService {
     Charity addAmountToCharity(Double amount, Long charityId) throws RowNotFoundException;
 
     List<Charity> getCharities();
+
+    void deleteCharity(Long charityId) throws RowNotFoundException;
 }
