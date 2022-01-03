@@ -86,7 +86,7 @@ public class CharityController {
         }
     }
 
-    @DeleteMapping(path = "/{charityId}")
+    @PostMapping(path = "/{charityId}")
     public ResponseEntity<?> deleteCharity(@PathVariable("charityId") Long charityId) {
         try {
             charityService.deleteCharity(charityId);
